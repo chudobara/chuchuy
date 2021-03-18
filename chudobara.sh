@@ -30,7 +30,7 @@ read -p "Seleccionar una opción: " opcion
 
 if [ $opcion = 1 ]; then
     cd
-    cd v2ray/
+    cd /etc/v2ray
     ./v2ctl uuid > userID
     ls
     cat userID
@@ -56,11 +56,11 @@ if [ $opcion = 2 ]; then
     cd
     echo Tu Host actual es:
     echo
-    sed '/host/!d' v2ray/config.json
+    sed '/host/!d' /etc/v2ray/config.json
     read -p "INTRODUCE EL HOST ACTUAL: " hostact
-    sed -i "s/$hostact/acaelhost/g" v2ray/config.json
+    sed -i "s/$hostact/acaelhost/g" etc/v2ray/config.json
     read -p "INTRODUCE EL NUEVO HOST: " newhost
-    sed -i "s/acaelhost/$newhost/g" v2ray/config.json
+    sed -i "s/acaelhost/$newhost/g" etc/v2ray/config.json
     clear
     echo ---------------------------
     echo HOST CAMBIADO CORRECTAMENTE
@@ -98,7 +98,7 @@ fi
 if [ $opcion = 5 ]; then
     clear
     cd
-    cd v2ray/ && tmux new-session -d -s v0 './v2ray' && cd
+    cd /etc/v2ray/ && tmux new-session -d -s v0 './v2ray' && cd
     echo SERVICIO V2RAY INICIADO
     sleep 2
     cd
@@ -114,9 +114,9 @@ if [ $opcion = 6 ]; then
     echo A CONTINUACION TENDRAS UNA LISTA CON LOS ID EXISTENTES
     sleep 5
     cd
-    sed '/id/!d' v2ray/config.json
+    sed '/id/!d' /etc/v2ray/config.json
     read -p "INTRODUZCA EL ID QUE DESEA ELIMINAR: " iddel
-    cd v2ray/
+    cd etc/v2ray/
     sed -i "/$iddel/d" ./config.json
     cd
     sh chudobara.sh
@@ -125,7 +125,7 @@ fi
 if [ $opcion = 7 ]; then
     clear
     cd
-    cd v2ray/
+    cd /etc/v2ray/
     read -p "INTRODUCE EL NUEVO ID: " idcustom
     sed -i '9a\            { "id": "tu-id-aqui-xd", "alterId":aID, "level":1 }\' config.json
     sed -i '10s/$/,/' config.json
@@ -146,7 +146,7 @@ if [ $opcion = 8 ]; then
     clear
     cd
     read -p "INTRODUZCA EL NUEVO PUERTO: " puerto
-    cd v2ray/
+    cd /etc/v2ray
     sed -i '/port/d' ./config.json
     sed -i "5a\      \"port\": $puerto," ./config.json
     cd
@@ -178,7 +178,7 @@ fi
 
 if [ $opcion = 10 ]; then
     cd
-    sed '/id/!d' v2ray/config.json
+    sed '/id/!d' /etc/v2ray/config.json
     echo
     read -p "INTRODUZCA EL ULTIMO DE LA LISTA (SI APARECEN VARIOS) O EL UNICO ALTERID: " rid
     sed -i "s/$rid, \"level\":1 },/$rid, \"level\":1 }/g" v2ray/config.json
@@ -191,7 +191,7 @@ if [ $opcion = 11 ]; then
     echo REINICIANDO V2RAY
     tmux kill-session -t v0
     cd
-    cd v2ray/
+    cd etc/v2ray
     tmux new-session -d -s v0 './v2ray'
     cd
     echo ------------
