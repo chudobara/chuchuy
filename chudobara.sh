@@ -75,11 +75,11 @@ fi
 
 if [ $opcion = 3 ]; then
     cd
-    sed '/id/!d' /cd/v2ray/config.json
-    sed '/host/!d' /cd/v2ray/config.json
-    sed '/port/!d' /cd/v2ray/config.json
-    sed '/patch/!d' /cd/v2ray/config.json
-    sed '/protocol/!d' /cd/v2ray/config.json
+    sed '/id/!d' /etc/v2ray/config.json
+    sed '/host/!d' /etc/v2ray/config.json
+    sed '/port/!d' /etc/v2ray/config.json
+    sed '/patch/!d' /etc/v2ray/config.json
+    sed '/protocol/!d' /etc/v2ray/config.json
     echo
     read -p "PRESIONA UNA TECLA PARA CONTINUAR..." t
     sh chudobara.sh
