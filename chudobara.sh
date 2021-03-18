@@ -48,7 +48,7 @@ if [ $opcion = 1 ]; then
     echo -------
     read -p "Presiona una tecla para continuar..." tend
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 2 ]; then
@@ -70,19 +70,19 @@ if [ $opcion = 2 ]; then
     read -p "PRESIONA UNA TECLA PARA CONTINUAR..." tend
     clear
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 3 ]; then
     cd
-    sed '/id/!d' v2ray/config.json
-    sed '/host/!d' v2ray/config.json
-    sed '/port/!d' v2ray/config.json
-    sed '/patch/!d' v2ray/config.json
-    sed '/protocol/!d' v2ray/config.json
+    sed '/id/!d' /cd/v2ray/config.json
+    sed '/host/!d' /cd/v2ray/config.json
+    sed '/port/!d' /cd/v2ray/config.json
+    sed '/patch/!d' /cd/v2ray/config.json
+    sed '/protocol/!d' /cd/v2ray/config.json
     echo
     read -p "PRESIONA UNA TECLA PARA CONTINUAR..." t
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 4 ]; then
@@ -92,7 +92,7 @@ if [ $opcion = 4 ]; then
     echo SERVICIO V2RAY DETENIDO
     sleep 2
     cd 
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 5 ]; then
@@ -102,7 +102,7 @@ if [ $opcion = 5 ]; then
     echo SERVICIO V2RAY INICIADO
     sleep 2
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 6 ]; then
@@ -119,7 +119,7 @@ if [ $opcion = 6 ]; then
     cd v2ray/
     sed -i "/$iddel/d" ./config.json
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 7 ]; then
@@ -139,7 +139,7 @@ if [ $opcion = 7 ]; then
     echo -------
     read -p "Presiona una tecla para continuar..." tend
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 8 ]; then
@@ -150,7 +150,7 @@ if [ $opcion = 8 ]; then
     sed -i '/port/d' ./config.json
     sed -i "5a\      \"port\": $puerto," ./config.json
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 9 ]; then
@@ -166,13 +166,13 @@ if [ $opcion = 9 ]; then
     echo V2Ray ENCENDIDO
     sleep 4
     cd
-    sh v2m.sh
+    sh chudobara.sh
     else
     clear
     echo V2Ray APAGADO
     sleep 4
     cd
-    sh v2m.sh
+    sh chudobara.sh
     fi
 fi
 
@@ -183,7 +183,7 @@ if [ $opcion = 10 ]; then
     read -p "INTRODUZCA EL ULTIMO DE LA LISTA (SI APARECEN VARIOS) O EL UNICO ALTERID: " rid
     sed -i "s/$rid, \"level\":1 },/$rid, \"level\":1 }/g" v2ray/config.json
     cd
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 11 ]; then
@@ -198,7 +198,7 @@ if [ $opcion = 11 ]; then
     sleep 3
     echo V2RAY ENCENDIDO
     sleep 3
-    sh v2m.sh
+    sh chudobara.sh
 fi
 
 if [ $opcion = 0 ]; then
